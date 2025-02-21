@@ -100,6 +100,46 @@
 					</div>
 				</section>
 
+				<!-- Section -->
+				<section>
+					<header id="blog" class="major">
+						<h2>Blog</h2>
+					</header>
+					<div class="table-wrapper">
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<details>
+											<summary><strong>Equation normale : existence of a solution</strong></summary>
+											<p>For \(A \in \mathbb{R}^{m \times n}\), \(b \in \mathbb{R}^m\) and \(x \in \mathbb{R}^n\), the normal equation is given by:</p>
+											<p>\[ A^\top A x = A^\top b \]</p>
+											<h3>Existence</h3>
+											<p>There always exists a solution to the normal equation.</p>
+											<h4>Proof</h4>
+											<p>First, we prove that \(\text{Ker}(A^\top A) = \text{Ker}(A^\top)\).</p>
+											<p>It is clear that \(\text{Ker}(A^\top) = \text{Ker}(A) \subset \text{Ker}(A^\top A)\). Then for \(x \in \text{Ker}(A^\top A)\), we have:</p>
+											<p>\[ A^\top A x = 0 \Rightarrow x^\top A^\top A x = 0 \Rightarrow ||Ax||^2_2 = 0 \Rightarrow Ax = 0 \]</p>
+											<p>Secondly, we want to prove that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
+											<p>It is clear that \( \text{Im}(A^\top A) \subset \text{Im}(A^\top)\).</p>
+											<p>Then, because \(\text{Ker}(A^\top A) = \text{Ker}(A^\top)\), the <em>Rank theorem</em> tells us that \(\text{dim(Im)}(A^\top A) = \text{dim(Im)}(A^\top) < +\infty \).</p>
+											<p>By the property of the sub vectorial space of finite dimension, we can conclude that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
+											<p>Finally, we have that:</p>
+											<p>\[ A^\top b \in \text{Im}(A^\top) = \text{Im}(A^\top A) \]</p>
+											<p>So, there exists \(x\) such that \(A^\top A x = A^\top b\).</p>
+											<h3>Remarks</h3>
+											<ul>
+												<li>This solution is unique if and only if \(A\) is full rank. In that case: \[ x = (A^\top A)^{-1} A^\top b \]</li>
+												<li>\(x\) is a solution to the normal equation if and only if \(x\) minimizes the least square error \(||Ax - b||_2^2\).</li>
+											</ul>
+										</details>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+
 
 				<!-- Section -->
 				<section>
@@ -169,6 +209,7 @@
 					<ul>
 						<li><a href="#talks">Talks</a></li>
 						<li><a href="#teaching">Teaching</a></li>
+						<li><a href="#blog">Blog</a></li>
 						<li><a href="#vitae">Curriculum</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
