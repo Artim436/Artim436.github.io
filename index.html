@@ -87,26 +87,6 @@
 
 				<!-- Section -->
 				<section>
-					<header id="teaching" class="major">
-						<h2>Teaching</h2>
-					</header>
-					<div class="table-wrapper">
-						<table>
-							<tbody>
-								<tr>
-									<td>2024 - 2025</td>
-									<td>Teaching assistant at <a href="https://www.ens-lyon.fr/en/">ENS de Lyon</a>
-									: L3 Computer Science <a href="https://www.ens-lyon.fr/formation/catalogue-de-cours/info3208/2024"> Logique Course</a>
-									<td></td>
-								</tr>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</section>
-
-				<!-- Section -->
-				<section>
 					<header id="blog" class="major">
 						<h2>Blog</h2>
 					</header>
@@ -116,27 +96,35 @@
 								<tr>
 									<td>
 										<details>
-											<summary><strong>Equation normale : existence of a solution</strong></summary>
-											<p>For \(A \in \mathbb{R}^{m \times n}\), \(b \in \mathbb{R}^m\) and \(x \in \mathbb{R}^n\), the normal equation is given by:</p>
+											<summary><strong>Equation normale</strong></summary>
+											<p>For \(A \in \mathbb{R}^{m \times n}\), \(b \in \mathbb{R}^m\) and \(x \in \mathbb{R}^n\), the normal equation is given by</p>
 											<p>\[ A^\top A x = A^\top b \]</p>
 											<h3>Existence</h3>
 											<p>There always exists a solution to the normal equation.</p>
 											<h4>Proof</h4>
-											<p>First, we prove that \(\text{Ker}(A^\top A) = \text{Ker}(A^\top)\).</p>
-											<p>It is clear that \(\text{Ker}(A^\top) = \text{Ker}(A) \subset \text{Ker}(A^\top A)\). Then for \(x \in \text{Ker}(A^\top A)\), we have:</p>
-											<p>\[ A^\top A x = 0 \Rightarrow x^\top A^\top A x = 0 \Rightarrow ||Ax||^2_2 = 0 \Rightarrow Ax = 0 \]</p>
-											<p>Secondly, we want to prove that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
-											<p>It is clear that \( \text{Im}(A^\top A) \subset \text{Im}(A^\top)\).</p>
-											<p>Then, because \(\text{Ker}(A^\top A) = \text{Ker}(A^\top)\), the <em>Rank theorem</em> tells us that \(\text{dim(Im)}(A^\top A) = \text{dim(Im)}(A^\top) < +\infty \).</p>
-											<p>By the property of the sub vectorial space of finite dimension, we can conclude that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
-											<p>Finally, we have that:</p>
+											<p>First, we prove that \(\text{Ker}(A^\top A) = \text{Ker}(A)\).</p>
+											<p>It is clear that \(\text{Ker}(A) \subset \text{Ker}(A^\top A)\).</p>
+											<p>Then for \(x \in \text{Ker}(A^\top A)\), we have</p>
+											<p>\[ A^\top A x = 0 \Rightarrow x^\top A^\top A x = 0 \Rightarrow \| Ax\|_2^2 = 0 \Rightarrow Ax = 0 \]</p>
+											<p>Thanks to the rank theorem, we have that</p>
+											<p>\[ \text{dim(Ker)}(A) = \text{dim(Ker)}(A^\top A) \]</p>
+											<p>By recalling that \(\text{rank}(A^\top ) = \text{rank}(A)\) (justified with the \(J_r\) decomposition), we conclude that</p>
+											<p>\[ \text{dim(Ker)}(A^\top) = \text{dim(Ker)}(A) = \text{dim(Ker)}(A^\top A) \]</p>
+											<p>Secondly, we prove that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
+											<p>Clearly, \( \text{Im}(A^\top A) \subset \text{Im}(A^\top) \).</p>
+											<p>Since \(\text{dim(Ker)}(A^\top) = \text{dim(Ker)}(A^\top A)\), the rank theorem tells us</p>
+											<p>\[ \text{rank}(A^\top A) = \text{rank}(A^\top) < +\infty \]</p>
+											<p>By the property of finite-dimensional subspaces, we conclude that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
+											<p>Finally, since</p>
 											<p>\[ A^\top b \in \text{Im}(A^\top) = \text{Im}(A^\top A) \]</p>
-											<p>So, there exists \(x\) such that \(A^\top A x = A^\top b\).</p>
-											<h3>Remarks</h3>
+											<p>there exists \(x\) such that \( A^\top A x = A^\top b \).</p>
+											<h4>Remarks</h4>
 											<ul>
-												<li>This solution is unique if and only if \(A\) is full rank. In that case: \[ x = (A^\top A)^{-1} A^\top b \]</li>
-												<li>\(x\) is a solution to the normal equation if and only if \(x\) minimizes the least square error \(||Ax - b||_2^2\).</li>
+												<li>\(x\) is a solution to the normal equation if and only if it minimizes the least square error \( \| Ax - b \|_2^2 \).</li>
+												<li>For a full rank matrix \(A\), there exists a unique solution: \[ x = (A^\top A)^{-1} A^\top b \]</li>
+												<li>\( x = (A^\top A)^+ A^\top b \) belongs to the set of solutions and minimizes the norm of \(x\).</li>
 											</ul>
+											<p><em>Acknowledgment: Some insights and inspiration were taken from discussions with <a href="https://maelchaumette.github.io/" target="_blank">Maël Chaumette</a>.</em></p>
 										</details>
 									</td>
 								</tr>
@@ -144,6 +132,8 @@
 						</table>
 					</div>
 				</section>
+				
+				
 
 
 				<!-- Section -->
