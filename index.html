@@ -107,23 +107,46 @@
 											<p>\[ A^\top A x = A^\top b \]</p>
 											<h3>Existence</h3>
 											<p>There always exists a solution to the normal equation.</p>
-											<h4>Proof</h4>
+											<h2>Proof</h2>
+											<p>We want to prove that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
+											<p>First, it is clear that \(\text{Im}(A^\top A) \subset \text{Im}(A^\top)\). Then, we need to prove the equality of dimensions, which, with the property of finite-dimensional subspaces, allows us to conclude the equality of the two spaces.</p>
+											<p>By noting that \(\text{rank}(A) = \text{rank}(A^\top)\) (which can be justified by the \(J_r\) decomposition), it remains to show that \(\text{rank}(A) = \text{rank}(A^\top A)\).</p>
 											<p>First, we prove that \(\text{Ker}(A^\top A) = \text{Ker}(A)\).</p>
-											<p>It is clear that \(\text{Ker}(A) \subset \text{Ker}(A^\top A)\).</p>
-											<p>Then for \(x \in \text{Ker}(A^\top A)\), we have</p>
-											<p>\[ A^\top A x = 0 \Rightarrow x^\top A^\top A x = 0 \Rightarrow \| Ax\|_2^2 = 0 \Rightarrow Ax = 0 \]</p>
-											<p>Thanks to the rank theorem, we have that</p>
-											<p>\[ \text{dim(Ker)}(A) = \text{dim(Ker)}(A^\top A) \]</p>
-											<p>By recalling that \(\text{rank}(A^\top ) = \text{rank}(A)\) (justified with the \(J_r\) decomposition), we conclude that</p>
-											<p>\[ \text{dim(Ker)}(A^\top) = \text{dim(Ker)}(A) = \text{dim(Ker)}(A^\top A) \]</p>
-											<p>Secondly, we prove that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
-											<p>Clearly, \( \text{Im}(A^\top A) \subset \text{Im}(A^\top) \).</p>
-											<p>Since \(\text{dim(Ker)}(A^\top) = \text{dim(Ker)}(A^\top A)\), the rank theorem tells us</p>
-											<p>\[ \text{rank}(A^\top A) = \text{rank}(A^\top) < +\infty \]</p>
-											<p>By the property of finite-dimensional subspaces, we conclude that \(\text{Im}(A^\top A) = \text{Im}(A^\top)\).</p>
-											<p>Finally, since</p>
-											<p>\[ A^\top b \in \text{Im}(A^\top) = \text{Im}(A^\top A) \]</p>
-											<p>there exists \(x\) such that \( A^\top A x = A^\top b \).</p>
+											<p>It is clear that \(\text{Ker}(A) \subset \text{Ker}(A^\top A)\). Then, for \(x \in \text{Ker}(A^\top A)\), we have:</p>
+											<div>
+												\[
+												\begin{align*}
+													A^\top A x = 0 &\Rightarrow x^\top A^\top A x = 0\\
+													&\Rightarrow \|Ax\|^2_2 = 0\\
+													&\Rightarrow Ax = 0
+												\end{align*}
+												\]
+											</div>
+											<p>Thanks to the rank theorem, we have:</p>
+											<div>
+												\[
+												n = \text{dim}(\text{Ker}(A)) + \text{rank}(A)
+												\]
+											</div>
+											<p>and</p>
+											<div>
+												\[
+												n = \text{dim}(\text{Ker}(A^\top A)) + \text{rank}(A^\top A)
+												\]
+											</div>
+											<p>So, because \(\text{Ker}(A^\top A) = \text{Ker}(A)\), we also have the equality of dimensions and thus:</p>
+											<div>
+												\[
+												\text{rank}(A) = \text{rank}(A^\top A)
+												\]
+											</div>
+											<p>Finally, we have:</p>
+											<div>
+												\[
+												A^\top b \in \text{Im}(A^\top) = \text{Im}(A^\top A)
+												\]
+											</div>
+											<p>So, there exists \(x\) such that \(A^\top A x = A^\top b\).</p>
 											<h4>Remarks</h4>
 											<ul>
 												<li>\(x\) is a solution to the normal equation if and only if it minimizes the least square error \( \| Ax - b \|_2^2 \).</li>
