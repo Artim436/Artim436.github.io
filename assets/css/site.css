@@ -1,0 +1,372 @@
+/*
+	Arthur Lebeurrier — personal site
+	Custom minimal layout, inspired by academic personal pages
+	(e.g. https://b-zhao.github.io/)
+*/
+
+@import url("font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+	--text: #222222;
+	--muted: #6b6b6b;
+	--accent: #8c1515;
+	--border: #e6e6e6;
+	--bg: #ffffff;
+	--bg-alt: #faf9f7;
+	--max-width: 780px;
+	--sidebar-width: 240px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+	margin: 0;
+	font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+	color: var(--text);
+	background: var(--bg);
+	font-size: 16px;
+	line-height: 1.65;
+}
+
+h1, h2, h3, h4 {
+	font-family: "Source Serif 4", Georgia, serif;
+	font-weight: 600;
+	line-height: 1.25;
+	color: var(--text);
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(140, 21, 21, 0.28);
+}
+
+a:hover { border-bottom-color: var(--accent); }
+
+.page {
+	display: flex;
+	align-items: flex-start;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 48px 24px 80px;
+	gap: 56px;
+}
+
+/* Sidebar */
+
+.sidebar {
+	position: sticky;
+	top: 48px;
+	flex: 0 0 var(--sidebar-width);
+	width: var(--sidebar-width);
+	text-align: center;
+}
+
+.sidebar .avatar {
+	width: 168px;
+	height: 168px;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 18px;
+	border: 1px solid var(--border);
+}
+
+.sidebar h1 {
+	font-size: 1.35rem;
+	margin: 0 0 4px;
+}
+
+.sidebar .tagline {
+	font-size: 0.88rem;
+	color: var(--muted);
+	margin: 0 0 16px;
+	line-height: 1.5;
+}
+
+.social-links {
+	list-style: none;
+	margin: 0 0 24px;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+}
+
+.social-links a {
+	border-bottom: none;
+	color: var(--text);
+	font-size: 1.15rem;
+}
+
+.social-links a:hover { color: var(--accent); }
+
+.site-nav {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	text-align: left;
+	border-top: 1px solid var(--border);
+	padding-top: 16px;
+}
+
+.site-nav a {
+	border-bottom: none;
+	color: var(--text);
+	font-size: 0.92rem;
+	padding: 6px 10px;
+	border-radius: 5px;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+	background: var(--bg-alt);
+	color: var(--accent);
+}
+
+/* Content */
+
+.content {
+	flex: 1 1 auto;
+	min-width: 0;
+	max-width: var(--max-width);
+}
+
+.content > section {
+	margin-bottom: 52px;
+	scroll-margin-top: 24px;
+}
+
+#about p { margin: 0 0 14px; }
+
+.content h2 {
+	font-size: 1.3rem;
+	margin: 0 0 18px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--border);
+}
+
+.badge-beta {
+	font-family: "Inter", sans-serif;
+	font-size: 0.62rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--accent);
+	border: 1px solid var(--accent);
+	border-radius: 999px;
+	padding: 2px 8px;
+	vertical-align: middle;
+	margin-left: 8px;
+	position: relative;
+	top: -3px;
+}
+
+/* News list */
+
+.news-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.news-list li {
+	display: flex;
+	gap: 18px;
+	padding: 11px 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.news-list li:last-child { border-bottom: none; }
+
+.news-list time {
+	flex: 0 0 92px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	padding-top: 2px;
+}
+
+.news-list .news-text { flex: 1 1 auto; }
+
+/* Publications / software */
+
+.pub {
+	margin-bottom: 26px;
+	padding-bottom: 26px;
+	border-bottom: 1px solid var(--border);
+}
+
+.pub:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+
+.pub h3 {
+	font-size: 1.05rem;
+	margin: 0 0 4px;
+}
+
+.pub .authors { margin: 0 0 4px; color: var(--text); }
+.pub .venue { margin: 0 0 8px; color: var(--muted); font-size: 0.92rem; font-style: italic; }
+
+.pub .links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 14px;
+	margin: 8px 0;
+	font-size: 0.88rem;
+}
+
+.pub .links a { border-bottom: 1px solid rgba(140,21,21,0.28); }
+
+.pub details summary {
+	cursor: pointer;
+	color: var(--muted);
+	font-size: 0.88rem;
+	margin-top: 6px;
+}
+
+.pub details p { font-size: 0.94rem; }
+
+/* Tables (teaching / CV) */
+
+.table-wrapper { overflow-x: auto; }
+
+table.plain {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.94rem;
+}
+
+table.plain td {
+	padding: 9px 12px 9px 0;
+	border-bottom: 1px solid var(--border);
+	vertical-align: top;
+}
+
+table.plain tr:last-child td { border-bottom: none; }
+
+table.plain td:first-child {
+	white-space: nowrap;
+	color: var(--muted);
+	width: 160px;
+}
+
+/* Blog */
+
+.blog-post {
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 24px;
+	margin-bottom: 24px;
+}
+
+.blog-post:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+
+.blog-post summary {
+	cursor: pointer;
+	font-size: 1.05rem;
+}
+
+.blog-post summary strong { font-family: "Source Serif 4", serif; }
+
+.blog-post .post-meta {
+	color: var(--muted);
+	font-size: 0.82rem;
+	margin: 4px 0 0;
+}
+
+.blog-post .post-body { margin-top: 14px; }
+
+.blog-post pre {
+	background: var(--bg-alt);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	padding: 12px 14px;
+	overflow-x: auto;
+	font-size: 0.85rem;
+	line-height: 1.5;
+}
+
+.blog-post code {
+	font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+	background: var(--bg-alt);
+	padding: 1px 5px;
+	border-radius: 4px;
+	font-size: 0.87em;
+}
+
+.blog-post pre code { background: none; padding: 0; }
+
+.blog-post table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 12px 0;
+	font-size: 0.9rem;
+}
+
+.blog-post th, .blog-post td {
+	border: 1px solid var(--border);
+	padding: 6px 10px;
+	text-align: left;
+}
+
+.blog-post th { background: var(--bg-alt); }
+
+/* Contact */
+
+.contact-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.contact-list li {
+	margin-bottom: 8px;
+	padding-left: 26px;
+	position: relative;
+	color: var(--text);
+}
+
+.contact-list li i {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	color: var(--accent);
+	width: 18px;
+}
+
+.site-footer {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 24px 40px;
+	color: var(--muted);
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 860px) {
+	.page {
+		flex-direction: column;
+		gap: 32px;
+		padding-top: 32px;
+	}
+	.sidebar {
+		position: static;
+		width: 100%;
+		flex: none;
+		text-align: center;
+	}
+	.sidebar .avatar { width: 120px; height: 120px; }
+	.site-nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		border-top: none;
+		padding-top: 8px;
+	}
+	.content { max-width: 100%; }
+	.news-list li { gap: 12px; }
+	.news-list time { flex-basis: 76px; font-size: 0.78rem; }
+}
